@@ -11,7 +11,7 @@ import { signin, signup, microsoftSignup } from '../../actions/auth';
 import { useIsAuthenticated } from "@azure/msal-react";
 import './Auth.scss';
 
-const initialState = { firstName: '', lastName: '', email: '', password: null, confirmPassword: '', role: '' };
+const initialState = { firstName: '', lastName: '', email: '', password: null, confirmPassword: '', role: 'user' };
 
 const Auth = () => {
     const dispatch = useDispatch();

@@ -18,3 +18,13 @@ export const getUsersBySearch = (searchQuery) => async (dispatch) => {
         console.log(error);
     }
 }
+
+export const updateUser = (role, userId) => async (dispatch) => {
+    try {
+        console.log(role, userId);
+        // const { data } = await api.getUsersBySearch(searchQuery);
+        // dispatch({ type: FETCH_USERS_BY_SEARCH, payload: data })
+    } catch (error) {
+        console.log(error);
+    }
+}

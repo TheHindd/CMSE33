@@ -22,6 +22,7 @@ const ChatRooms = () => {
     }, [location]);
 
     const openCreateChatModal = () => {
+        console.log(currentUser);
         setIsShowing(true);
         users.forEach(user => {
             if (user._id !== currentUser.result._id) {
@@ -40,16 +41,19 @@ const ChatRooms = () => {
             { isShowing ? <div onClick={() => {closeCreateChatModal()}} className="back-drop"></div> : null }
             <div className="chatrooms__header">
                 <div className="header__left">
-                    <h5>Chat</h5>
+                    <h5>Group</h5>
                     <ExpandMoreIcon />
                 </div>
-                <div className="header__right">
-                    <Tooltip title="New Chat">
-                        <IconButton onClick={() => {openCreateChatModal()}}>
-                            <img src="https://img.icons8.com/fluent-systems-regular/48/000000/edit-chat-history.png" alt="new chat" />
-                        </IconButton>
-                    </Tooltip>
-                </div>
+                {
+                    (currentUser.result.role && (currentUser.result.role == "admin" || currentUser.result.role == "staff")) &&
+                    <div className="header__right">
+                        <Tooltip title="New Chat">
+                            <IconButton onClick={() => {openCreateChatModal()}}>
+                                <img src="https://img.icons8.com/fluent-systems-regular/48/000000/edit-chat-history.png" alt="new group" />
+                            </IconButton>
+                        </Tooltip>
+                    </div>
+                }
             </div>
             <div className="chatrooms__rooms">
                 {events.concat(conversations).sort((a, b) => new Date(b.UpdatedAt) - new Date(a.UpdatedAt)).map((event) => {

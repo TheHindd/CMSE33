@@ -67,11 +67,20 @@ function Sidebar() {
             <Link to="/chat">
                 <SidebarItem
                     icon="https://img.icons8.com/fluent-systems-regular/48/000000/chat-message.png"
-                    text="Chat"
+                    text="Group"
                     hoverIcon={chat}
                 />
             </Link>
-
+            {
+                (currentUser.result.role && currentUser.result.role == "admin") && 
+                <Link to="/admin">
+                    <SidebarItem
+                        icon="https://img.icons8.com/fluent-systems-regular/48/000000/settings.png"
+                        text="Admin"
+                        hoverIcon="https://img.icons8.com/fluent-systems-regular/48/000000/settings.png"
+                    />
+                </Link>
+            }
 
             <div className="sidebarItem">
                 <MoreHorizIcon />

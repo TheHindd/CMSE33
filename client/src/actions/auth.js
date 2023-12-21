@@ -21,6 +21,15 @@ export const signup = (form, history) => async (dispatch) => {
     }
 }
 
+export const signupAdmin = (form, history) => async (dispatch) => {
+    try {
+        const { data } = await api.signUp(form);
+        history.push('/admin')
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export const microsoftSignup = (form, data, history) => async (dispatch) => {
     try {
         // eslint-disable-next-line no-unused-vars

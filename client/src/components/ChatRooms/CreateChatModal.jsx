@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Select from 'react-select'
+import Select from 'react-select';
 import { createConversation } from '../../actions/conversations';
 import './ChatRooms.scss';
 

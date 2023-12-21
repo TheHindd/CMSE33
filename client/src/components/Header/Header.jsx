@@ -63,7 +63,7 @@ const Header = () => {
         <div className="header">
             <div className="header__logo">
                 <Apps />
-                <h5 className="d-none d-md-block">Microsoft Teams</h5>
+                <h5 className="d-none d-md-block">iconic STLS</h5>
             </div>
             {user ?
                 <div className="header__search">

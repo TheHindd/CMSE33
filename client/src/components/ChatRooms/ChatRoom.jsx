@@ -185,7 +185,7 @@ const ChatRoom = () => {
                 <div className="chatroom__header">
                     <div className="chatroom__headerleft">
                         <Avatar>{event.Subject.charAt(0)}</Avatar>
-                        {event ? <h5>{event.Subject}</h5> : <h5>Teams Clone Chat</h5>}
+                        {event ? <h5>{event.Subject}</h5> : <h5>Teams Clone group</h5>}
                         <Tooltip title="Edit">
                             <IconButton>
                                 <CreateIcon />
@@ -230,7 +230,7 @@ const ChatRoom = () => {
                 <div className="chatroom__header">
                     <div className="chatroom__headerleft">
                         <Avatar>{conversation.Subject.charAt(0)}</Avatar>
-                        {conversation ? <h5>{conversation.Subject}</h5> : <h5>Teams Clone Chat</h5>}
+                        {conversation ? <h5>{conversation.Subject}</h5> : <h5>Teams Clone group</h5>}
                         <Tooltip title="Edit">
                             <IconButton>
                                 <CreateIcon />
