@@ -74,6 +74,7 @@ const Auth = () => {
         }
     }
 
+
     return (
         <div className="auth">
             <h3>STLS</h3>
