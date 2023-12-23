@@ -36,7 +36,7 @@ const Header = () => {
         if (user.result.idTokenClaims?.sub) {
             instance.logoutPopup()
             .then(() => {
-                dispatch({ type: 'LOGOUT chile' });
+                dispatch({ type: 'LOGOUT' });
                 history.push('/');
                 setUser(null);
             })
@@ -44,7 +44,7 @@ const Header = () => {
                 console.error(e);
             });
         } else {
-            dispatch({ type: 'LOGOUT chile' });
+            dispatch({ type: 'LOGOUT ' });
             history.push('/');
             setUser(null);
         }
@@ -63,14 +63,14 @@ const Header = () => {
         <div className="header">
             <div className="header__logo">
                 <Apps />
-                <h5 className="d-none d-md-block">iconic STLS</h5>
+                <h5 className="d-none d-md-block">ICONIC STLS</h5>
             </div>
             {user ?
-                <div className="header__search">
+               <div className="header__search">
                     <SearchIcon />
-                    <input type="text" placeholder="Search" />
+                  <input type="text" placeholder="Search" />
                 </div>
-            : null}
+            :null}
             <div className="header__options">
                 <MoreHorizIcon />
                 {user ? (

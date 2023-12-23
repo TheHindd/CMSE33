@@ -77,11 +77,12 @@ const Auth = () => {
 
     return (
         <div className="auth">
-            <h3>Iconic STLS</h3>
+            <header>
+            <h3>STLS</h3>
             <div className="auth__form">
-                { !isSignup && <img src={teams} alt="" style={{ padding: "5px 0" }} /> }
-                { isSignup && <img src={teams_register} alt="" style={{ height: "200px" }} /> }
-                { !isSignup && <h4>Enter your work, school, or Microsoft account</h4> }
+            {!isSignup && <img src="https://img.freepik.com/free-vector/students-with-laptops-studying-huge-laptop-with-graduation-cap_335657-3284.jpg?size=626&ext=jpg&uid=R101150078&ga=GA1.2.999020824.1682817461&semt=ais" alt="" />}
+                {isSignup && <img src={teams_register} alt="" style={{ height: "200px" }} />}
+                {!isSignup && <h4>SIGN IN</h4>}
                 <form onSubmit={handleSubmit}>
                     { isSignup && (
                     <div className="auth__name">
@@ -92,7 +93,7 @@ const Auth = () => {
                     <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
                     <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
                     { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
-                    <Button type="submit" fullWidth variant="contained" color="pink" className="submit">
+                    <Button type="submit" fullWidth variant="contained" color="primary" className="submit">
                         { isSignup ? 'Sign Up' : 'Sign In' }
                     </Button>
                     { isAuthenticated ?
@@ -110,6 +111,7 @@ const Auth = () => {
                 { isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up" }
                 </Button>
             </div>
+           </header>
         </div>
     );
 }

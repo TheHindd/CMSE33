@@ -6,9 +6,9 @@
 
     .auth__form {
         width: 400px;
-        border: 1px solid pink;
+        border: 1px solid #aaaaac;
         padding: 10px;
-        box-shadow: 1px 0px 5px rgb(229, 151, 151);
+        box-shadow: 1px 0px 5px rgb(131, 131, 131);
         border-radius: 5px;
     }
 
@@ -19,14 +19,17 @@
 
     h3 {
         text-align: center;
-        color: #df759f;
+        color: #110d0d;
         font-family: 'Times New Roman', Times, serif;
         font-size: 30px;
+
 
     }
 
     img {
         width: 100%;
+        flex-direction: row;
+
     }
 
     .auth__name {
@@ -48,7 +51,6 @@
         width: 20px;
         margin-right: 10px;
     }
-
     Button {
         margin: 5px 0;
     }
@@ -57,6 +59,6 @@
         margin: 5px 0;
     }
     .submit{
-        color: 	#7a057a;
+        color: 	#ede9ed;
     }
 }

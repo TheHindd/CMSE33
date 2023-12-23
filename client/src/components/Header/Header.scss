@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(103, 11, 97);
+    background-color: #3f136e;
+
 
     .header__logo {
         display: flex;
@@ -19,14 +20,14 @@
     }
 
     .header__logo > svg:hover {
-        background-color: pink;
+       background-color: #6264A7;
     }
 
-    .header__logo > h5 {
-        font-size: 18px;
+    .header__logo>h5 {
+        font-size: 30px;
         margin: 0 20px;
+        font-family: 'Times New Roman', Times, serif;
     }
-
     .header__search {
         display: flex;
         flex-direction: row;
@@ -47,7 +48,7 @@
     }
 
     .header__search > svg {
-        color:pink;
+        color: #616161;
         height: 18px;
     }
 
@@ -81,6 +82,6 @@
     }
 
     .header__options > .header__profile:hover {
-        background-color: pink;
+        background-color: #6264A7;;
     }
 }
