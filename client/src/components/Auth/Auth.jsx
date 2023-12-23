@@ -77,7 +77,6 @@ const Auth = () => {
 
     return (
         <div className="auth">
-            <header>
             <h3>STLS</h3>
             <div className="auth__form">
             {!isSignup && <img src="https://img.freepik.com/free-vector/students-with-laptops-studying-huge-laptop-with-graduation-cap_335657-3284.jpg?size=626&ext=jpg&uid=R101150078&ga=GA1.2.999020824.1682817461&semt=ais" alt="" />}
@@ -93,7 +92,7 @@ const Auth = () => {
                     <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
                     <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
                     { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
-                    <Button type="submit" fullWidth variant="contained" color="primary" className="submit">
+                    <Button type="submit" fullWidth variant="contained" color="pink" className="submit">
                         { isSignup ? 'Sign Up' : 'Sign In' }
                     </Button>
                     { isAuthenticated ?
@@ -111,7 +110,6 @@ const Auth = () => {
                 { isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up" }
                 </Button>
             </div>
-           </header>
         </div>
     );
 }
