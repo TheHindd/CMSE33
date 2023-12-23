@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #464775;
+    background-color: purple;
 
     .header__logo {
         display: flex;
@@ -19,7 +19,7 @@
     }
 
     .header__logo > svg:hover {
-        background-color: #6264A7;
+        background-color: pink;
     }
 
     .header__logo > h5 {
@@ -47,7 +47,7 @@
     }
 
     .header__search > svg {
-        color: #616161;
+        color:pink;
         height: 18px;
     }
 
@@ -81,6 +81,6 @@
     }
 
     .header__options > .header__profile:hover {
-        background-color: #6264A7;
+        background-color: pink;
     }
 }

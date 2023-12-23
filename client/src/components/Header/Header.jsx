@@ -36,7 +36,7 @@ const Header = () => {
         if (user.result.idTokenClaims?.sub) {
             instance.logoutPopup()
             .then(() => {
-                dispatch({ type: 'LOGOUT' });
+                dispatch({ type: 'LOGOUT chile' });
                 history.push('/');
                 setUser(null);
             })
@@ -44,7 +44,7 @@ const Header = () => {
                 console.error(e);
             });
         } else {
-            dispatch({ type: 'LOGOUT' });
+            dispatch({ type: 'LOGOUT chile' });
             history.push('/');
             setUser(null);
         }

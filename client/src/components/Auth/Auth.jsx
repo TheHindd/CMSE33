@@ -76,7 +76,7 @@ const Auth = () => {
 
     return (
         <div className="auth">
-            <h3>Microsoft Teams</h3>
+            <h3>Iconic STLS</h3>
             <div className="auth__form">
                 { !isSignup && <img src={teams} alt="" style={{ padding: "5px 0" }} /> }
                 { isSignup && <img src={teams_register} alt="" style={{ height: "200px" }} /> }
@@ -91,7 +91,7 @@ const Auth = () => {
                     <Input name="email" label="Email Address" handleChange={handleChange} type="email" />
                     <Input name="password" label="Password" handleChange={handleChange} type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} />
                     { isSignup && <Input name="confirmPassword" label="Repeat Password" handleChange={handleChange} type="password" /> }
-                    <Button type="submit" fullWidth variant="contained" color="primary" className="submit">
+                    <Button type="submit" fullWidth variant="contained" color="	#EE82EE" className="submit">
                         { isSignup ? 'Sign Up' : 'Sign In' }
                     </Button>
                     { isAuthenticated ?

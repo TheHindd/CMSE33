@@ -6,9 +6,9 @@
     
     .auth__form {
         width: 400px;
-        border: 1px solid #aaaaac;
+        border: 1px solid pink;
         padding: 10px;
-        box-shadow: 1px 0px 5px rgb(131, 131, 131);
+        box-shadow: 1px 0px 5px rgb(229, 151, 151);
         border-radius: 5px;
     }
 
@@ -50,5 +50,8 @@
 
     .MuiGrid-root.MuiGrid-item {
         margin: 5px 0;
+    }
+    .submit{
+        color: 	#7a057a;
     }
 }
