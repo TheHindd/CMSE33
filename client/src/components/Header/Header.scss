@@ -3,30 +3,28 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: #331c86;
+    background-color: rgb(103, 11, 97);
 
     .header__logo {
         display: flex;
         flex-direction: row;
         align-items: center;
         color: #ffffff;
-
     }
 
-    .header__logo>svg {
+    .header__logo > svg {
         height: 45px;
         fill: #ffffff;
         padding: 5px 16px;
     }
 
-    .header__logo>svg:hover {
-        background-color: #6264A7;
+    .header__logo > svg:hover {
+        background-color: pink;
     }
 
-    .header__logo>h5 {
-        font-size: 30px;
+    .header__logo > h5 {
+        font-size: 18px;
         margin: 0 20px;
-        font-family: 'Times New Roman', Times, serif;
     }
 
     .header__search {
@@ -40,16 +38,16 @@
         border-radius: 5px;
         width: 43%;
     }
-
-    .header__search>input {
+    
+    .header__search > input {
         border: none;
         background-color: transparent;
         outline-width: 0;
         width: 100%;
     }
 
-    .header__search>svg {
-        color: #616161;
+    .header__search > svg {
+        color:pink;
         height: 18px;
     }
 
@@ -60,29 +58,29 @@
         color: #ffffff;
     }
 
-    .header__options>svg {
+    .header__options > svg {
         margin: 0 20px;
     }
 
-    .header__options>.header__profile>div>.MuiButtonBase-root>.MuiButton-label>.MuiAvatar-root {
+    .header__options > .header__profile > div > .MuiButtonBase-root > .MuiButton-label >.MuiAvatar-root {
         margin: 7.5px 20px;
         height: 30px;
         width: 30px;
     }
 
-    .header__options>.header__profile>div {
+    .header__options > .header__profile > div {
         height: 100%;
     }
 
-    .header__options>.header__profile>div>.MuiButtonBase-root {
+    .header__options > .header__profile > div > .MuiButtonBase-root {
         height: 100%;
     }
 
-    .header__options>.header__profile {
+    .header__options > .header__profile {
         height: 45px;
     }
 
-    .header__options>.header__profile:hover {
-        background-color: #6264A7;
+    .header__options > .header__profile:hover {
+        background-color: pink;
     }
 }

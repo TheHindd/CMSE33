@@ -3,7 +3,7 @@
     // max-width: 5% !important;
     width: 70px;
     height: 93.7vh;
-    box-shadow: 1px 0px 5px rgb(131, 131, 131);
+    box-shadow: 1px 0px 5px rgb(192, 126, 126);
 
     .MuiSnackbar-root > .MuiPaper-root > .MuiAlert-icon > .MuiSvgIcon-root {
         font-size: 24px;
@@ -44,7 +44,7 @@
     }
 
     .active {
-        border-left: 4px solid #6264A7;
+        border-left: 4px solid pink;
     }
 
     .auth__button {
