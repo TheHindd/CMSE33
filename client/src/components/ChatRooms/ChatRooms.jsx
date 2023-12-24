@@ -47,7 +47,7 @@ const ChatRooms = () => {
                 {
                     (currentUser.result.role && (currentUser.result.role == "admin" || currentUser.result.role == "staff")) &&
                     <div className="header__right">
-                        <Tooltip title="New Chat">
+                        <Tooltip title="New Group">
                             <IconButton onClick={() => {openCreateChatModal()}}>
                                 <img src="https://img.icons8.com/fluent-systems-regular/48/000000/edit-chat-history.png" alt="new group" />
                             </IconButton>
