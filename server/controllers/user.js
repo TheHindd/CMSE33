@@ -1,6 +1,7 @@
 import crypto from 'crypto';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.js';
+import Key from '../models/key.js';
 
 // Helper function for DES encryption
 const encryptWithDES = (text, secretKey) => {
@@ -20,17 +21,22 @@ const decryptWithDES = (encryptedText, secretKey) => {
 
 export const signin = async (req, res) => {
     const { email, password } = req.body;
+
     try {
         const existingUser = await User.findOne({ email });
+        const keys = await Key.find();
+
         if (!existingUser)
             return res.status(404).json({ message: "User doesn't exist." });
 
         // Decrypt the stored password using the same key used for encryption
-        const decryptedPassword = decryptWithDES(existingUser.password, 'yourSecretKey');
+        console.log('decrypting with key id=', keys[keys.length - 1]._id);
+        const decryptedPassword = decryptWithDES(existingUser.password, keys[keys.length - 1].key);
         const isPasswordCorrect = password === decryptedPassword;
 
-        if (!isPasswordCorrect)
+        if (!isPasswordCorrect) {
             return res.status(400).json({ message: "Invalid credentials." });
+        }
 
         const token = jwt.sign({ name: existingUser.name, email: existingUser.email, id: existingUser._id }, 'test', { expiresIn: "1h" });
         res.status(200).json({ result: existingUser, token: token });
@@ -44,16 +50,19 @@ export const signup = async (req, res) => {
 
     try {
         const existingUser = await User.findOne({ email });
+        const keys = await Key.find();
+
         if (existingUser) {
             return res.status(400).json({ message: "User already exist." });
         }
 
-        if (password !== confirmPassword)
+        if (password !== confirmPassword) {
             return res.status(400).json({ message: "Passwords don't match." });
+        }
 
         // Encrypt the password using DES encryption
-        const encryptedPassword = encryptWithDES(password, 'yourSecretKey');
-
+        console.log('encrypting with key id=', keys[keys.length - 1]._id);
+        const encryptedPassword = encryptWithDES(password, keys[keys.length - 1].key);
         const result = await User.create({ email, password: encryptedPassword, name: `${firstName} ${lastName}`, role });
         const token = jwt.sign({ name: result.name, email: result.email, id: result._id }, 'test', { expiresIn: "1h" });
         res.status(200).json({ result: result, token: token });

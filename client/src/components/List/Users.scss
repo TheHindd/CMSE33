@@ -313,7 +313,20 @@
 
 
 .btn-continue {
-    background-color: pink;
+    margin: 10px 0 10px;
+    background-color: blue;
+    float: right;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    padding: 10px;
+}
+
+.btn-delete {
+    margin: 10px 50px 10px;
+    background-color: red;
     float: right;
     border: none;
     color: white;

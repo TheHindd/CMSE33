@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Select from 'react-select';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateUser } from '../../actions/users';
+import { updateUser, deleteUser } from '../../actions/users';
 import './Users.scss';
 import '../Auth/Auth.scss';
 
 const UserModify = () => {
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem('profile')));
     const dispatch = useDispatch();
+    const history = useHistory();
     const users = useSelector((state) => state.users);    
     const [userModify, setUserModify] = useState({});
     const [message, setMessage] = useState('');
@@ -34,9 +35,13 @@ const UserModify = () => {
 
     const handleSubmit = (e) => {
         if (message) {
-            dispatch(updateUser(message, userId));
+            dispatch(updateUser(message, userId, history));
             setMessage('');
         }   
+    }
+
+    const handleDelete = () => {
+        dispatch(deleteUser(userId, history));
     }
 
     if (userId) {
@@ -57,8 +62,10 @@ const UserModify = () => {
                                 { value: "user", label: "user" },
                             ]}
                             onChange={handleChange}
-                        />                        
-                        <button className="btn-continue" onClick={() => {handleSubmit()}}>Save</button>
+                        />              
+                        
+                        <button className="btn-continue" onClick={() => {handleSubmit(userModify.email)}}>Save</button>
+                        <button className="btn-delete" onClick={() => {handleDelete()}}>Delete</button>
                     </div>
                 </div>
             </div>

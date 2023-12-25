@@ -19,11 +19,19 @@ export const getUsersBySearch = (searchQuery) => async (dispatch) => {
     }
 }
 
-export const updateUser = (role, userId) => async (dispatch) => {
+export const updateUser = (role, userId, history) => async (dispatch) => {
     try {
-        console.log(role, userId);
-        // const { data } = await api.getUsersBySearch(searchQuery);
-        // dispatch({ type: FETCH_USERS_BY_SEARCH, payload: data })
+        const { data } = await api.updateUser({ role: role.value, _id: userId });
+        history.push('/admin');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const deleteUser = (userId, history) => async (dispatch) => {
+    try {
+        const { data } = await api.deleteUser({ _id: userId });
+        history.push('/admin');
     } catch (error) {
         console.log(error);
     }

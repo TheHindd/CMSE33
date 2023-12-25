@@ -23,6 +23,8 @@ export const deleteEventByCreatorIdDate = (date) => API.delete(`/events/${date}/
 
 export const getUsers = () => API.get('/users');
 export const getUsersBySearch = (searchQuery) => API.get(`/users/search?searchQuery=${searchQuery}`);
+export const deleteUser = (body) => API.post('/users/delete', body);
+export const updateUser = (body) => API.post('/users/update', body);
 
 export const sendMessage = (message, id) => API.post(`/events/${id}/eventMsg`, message);
 

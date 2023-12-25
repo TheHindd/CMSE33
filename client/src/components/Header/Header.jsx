@@ -38,6 +38,7 @@ const Header = () => {
             .then(() => {
                 dispatch({ type: 'LOGOUT' });
                 history.push('/');
+                localStorage.removeItem('profile');
                 setUser(null);
             })
             .catch(e => {
@@ -46,6 +47,7 @@ const Header = () => {
         } else {
             dispatch({ type: 'LOGOUT ' });
             history.push('/');
+            localStorage.removeItem('profile');
             setUser(null);
         }
         setAnchorEl(null);
@@ -98,7 +100,7 @@ const Header = () => {
                         }
                     </div>
                     </>
-                ):  <Link to="/">
+                ) : <Link to="/">
                         <Button className="microsoft__login ml-auto" fullWidth variant="contained">
                             Sign in
                         </Button>
